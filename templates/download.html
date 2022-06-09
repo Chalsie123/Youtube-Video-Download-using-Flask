@@ -1,0 +1,22 @@
+{% extends 'base.html'%}
+{% block title %}
+    <title>Youtube - {{yt.title}}</title>
+{% endblock title %}
+
+{% block body %}
+<h1>{{yt.title}}</h1>
+    <img src="{{yt.thumbnail_url}}"></a>
+    <h2>Select Your Video Quality</h2>
+    <form action="/result", method="POST">
+      <label for="qt">Choose a car:</label>
+      <select name="qt" id="qt">
+    {% for i in strea %}
+    
+        <option value="{{i.itag}}">{{i.resolution}}</option>
+      
+      {% endfor %}
+    </select>
+    <br><br>
+      <input type="submit" value="Submit">
+    </form>
+{% endblock body %}
